@@ -1,0 +1,154 @@
+@font-face {
+    font-family: TripSans;
+    src: url(../assets/fonts/trip-sans-variable.ttf);
+}
+
+@font-face {
+    font-family: GesturaLight;
+    src: url(../assets/fonts/GesturaLight.otf);
+}
+
+@font-face {
+    font-family: GesturaItalic;
+    src: url(../assets/fonts/GesturaRegularItalic.otf);
+}
+
+@font-face {
+    font-family: GesturaThin;
+    src: url(../assets/fonts/GesturaThin.otf);
+}
+
+:root {
+    --primary-color: #606C5D;
+    --secondary-color: #FFF4F4;
+    --tertiary-color: #F7E6C4;
+    --highlight-color: #F1C376;
+    box-sizing: border-box;
+    color: var(--highlight-color);
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.section-1 {
+    background-color: var(--primary-color);
+    padding: 2em 1em;
+}
+
+
+.nav-div {
+    background-color: var(--primary-color);
+    padding: 1.3em 0;
+}
+
+.nav-list {
+    font-family: GesturaThin;
+    list-style-type: none;
+    display: flex;
+    gap: 1em;
+    font-size: 1.4rem;
+}
+
+li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-item:hover {
+    opacity: 0.8;
+}
+
+.intro {
+    text-align: center;
+}
+
+.intro-name {
+    font-size: 5rem;
+    font-family: GesturaThin;
+    margin-top: .5em;
+}
+
+.intro-info {
+    font-size: 1.5rem;
+    font-family: GesturaThin;
+}
+
+.intro-location {
+    font-size: 1.1rem;
+    font-family: GesturaThin;
+}
+
+.quote {
+    padding: 5em 1em;
+}
+
+.quote-div {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.quote-text {
+    font-size: 2.3rem;
+    font-family: GesturaItalic;
+    font-style: italic;
+}
+
+.quote-text:hover {
+    opacity: 0.8;
+}
+
+.quote-credit {
+    font-size: 1.2rem;
+    font-family: TripSans;
+}
+
+.section-2 {
+    /* background-color: var(--secondary-color); */
+    padding: 4em 1em;
+    color: var(--primary-color);
+}
+
+.about-title {
+    font-size: 4rem;
+    font-family: GesturaThin;
+    font-weight: 500;
+}
+
+.info-div {
+    display: flex;
+    margin-top: 3em;
+    justify-content: space-between;
+}
+
+.info {
+    width: 60%;
+    font-size: 1.5rem;
+    text-align: justify;
+    text-justify: inter-word;
+    font-family: GesturaThin;
+    
+}
+
+.img-res {
+    width: 30%;
+    align-self: flex-start;
+    border-radius: 100px 100px 0 0 ;
+}
