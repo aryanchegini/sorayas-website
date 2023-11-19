@@ -132,6 +132,20 @@ textarea {
   color: white;
 }
 
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: none;
+}
+
+.menu-toggle {
+  display: none;
+}
+
 .intro-info {
   font-size: 1.5rem;
   font-family: GesturaThin;
@@ -140,10 +154,6 @@ textarea {
 .intro-location {
   font-size: 1.1rem;
   font-family: GesturaThin;
-}
-
-.centered-div {
-    
 }
 
 .intro-image {
@@ -338,7 +348,7 @@ textarea:focus {
   text-decoration-skip-ink: auto;
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 715px) {
   .container {
     width: 90%;
   }
@@ -382,4 +392,34 @@ textarea:focus {
   .contact-title {
     width: 100%;
   }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-nav-active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+  }
+
+  .intro-div {
+    padding-top: 0;
+  }
+
+
+
+
+
+
 }
