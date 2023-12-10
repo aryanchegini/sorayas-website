@@ -18,7 +18,8 @@
   --secondary-color: #fffce2;
   --tertiary-color: #f7e6c4;
   --highlight-color: #f1c376;
-  --multiply-color: rgb(118, 113, 113);
+  --multiply-color: rgb(98, 95, 95);
+  --multiply-color-darker: rgb(104, 99, 99);
   box-sizing: border-box;
   color: var(--highlight-color);
 }
@@ -137,15 +138,6 @@ textarea {
   color: white;
 }
 
-.banner-div-2 {
-  background-color: var(--multiply-color);
-  background-image: url(../assets/images/staircase.jpg);
-  background-blend-mode: multiply;
-  background-size: cover;
-  /* background-attachment: fixed; */
-  background-position: center;
-}
-
 .examples-div {
   background-color: var(--primary-color);
   color: var(--secondary-color);
@@ -156,7 +148,7 @@ textarea {
 }
 
 .approach-div {
-  background-color: var(--multiply-color);
+  background-color: var(--multiply-color-darker);
   background-image: url(../assets/images/staircase.jpg);
   background-blend-mode: multiply;
   background-size: cover;
@@ -334,9 +326,6 @@ textarea {
   grid-area: 4 / 1 / 5 / 3;
 }
 
-form label {
-  margin: 0.5em 0;
-}
 
 form label,
 input:not([type="submit"]),
@@ -344,8 +333,12 @@ textarea {
   display: block;
   width: 100%;
   font-family: GesturaThin;
-  color: black;
+  color: var(--primary-color);
   font-size: 1.25rem;
+}
+
+form label {
+  margin: 0.5em 0;
 }
 
 form input:not([type="submit"]):focus,
@@ -377,29 +370,13 @@ textarea:focus {
 
 @media screen and (max-width: 920px) {
   .container {
-    width: 90%;
+    width: 85%;
   }
 
   .row {
     flex-direction: column;
     align-items: center;
     gap: 2em;
-  }
-
-
-  .intro-image {
-    width: 60%;
-  }
-
-  .img-res-div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
-  }
-
-  .img-res {
-    width: 60%;
   }
 
   .info,
@@ -439,9 +416,5 @@ textarea:focus {
 
   .intro-div {
     padding: 8em 0;
-  }
-
-  .form-div {
-    width: 100%;
   }
 }
