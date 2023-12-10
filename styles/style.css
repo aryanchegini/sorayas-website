@@ -4,25 +4,21 @@
 }
 
 @font-face {
-  font-family: GesturaLight;
-  src: url(../assets/fonts/GesturaLight.otf);
+  font-family: PlayfairLight;
+  src: url(../assets/fonts/Playfair_144pt-Light.ttf);
 }
 
 @font-face {
-  font-family: GesturaItalic;
-  src: url(../assets/fonts/GesturaRegularItalic.otf);
-}
-
-@font-face {
-  font-family: GesturaThin;
-  src: url(../assets/fonts/GesturaThin.otf);
+  font-family: PlayfairItalic;
+  src: url(../assets/fonts/PlayfairDisplay-Italic.ttf);
 }
 
 :root {
-  --primary-color: #606c5d;
-  --secondary-color: #fff4f4;
+  --primary-color: #424a3f;
+  --secondary-color: #fffce2;
   --tertiary-color: #f7e6c4;
   --highlight-color: #f1c376;
+  --multiply-color: rgb(118, 113, 113);
   box-sizing: border-box;
   color: var(--highlight-color);
 }
@@ -38,9 +34,8 @@ body {
 }
 
 nav {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   padding: 1.3em 0;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 li a {
@@ -58,6 +53,7 @@ textarea {
 .narrow-container {
   width: 80%;
   margin: 0 auto;
+  max-width: 1000px;
 }
 
 .narrow-container {
@@ -72,7 +68,9 @@ textarea {
 }
 
 .row,
-.row-aligned {
+.row-aligned,
+.centered-div
+{
   display: flex;
   justify-content: space-between;
 }
@@ -81,40 +79,113 @@ textarea {
   align-items: center;
 }
 
+.centered-div {
+  align-items: center;
+  justify-content: center;
+}
+
 .bold-text {
-  font-style: GesturaLight;
+  font-style: PlayfairLight;
 }
 
 .img-res {
+  width: 70%;
+}
+
+.img-res-div {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3em;
+}
+
+.underline,
+.active {
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 0.5px;
+  text-underline-offset: 0.3em;
+  text-decoration-skip: auto;
+  text-decoration-skip-ink: auto;
+}
+
+.subscript {
+  margin-top: 0.5em;
+  font-size: 1.1rem;
+}
+
+.two-col-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(390px, 50%));
+}
+
+/*********************DIVS*********************/
+
+.section-div {
+  padding: 4em 1em;
+  color: var(--primary-color);
 }
 
 .intro-div {
-  background-color: var(--primary-color);
-  padding: 2em 0 3em 0;
+  background-color: var(--multiply-color);
+  background-image: url(../assets/images/hand.jpg);
+  padding: 16em 0;
+  background-blend-mode: multiply;
+  background-size: cover;
+  /* background-attachment: fixed; */
+  color: white;
 }
 
+.banner-div-2 {
+  background-color: var(--multiply-color);
+  background-image: url(../assets/images/staircase.jpg);
+  background-blend-mode: multiply;
+  background-size: cover;
+  /* background-attachment: fixed; */
+  background-position: center;
+}
+
+.examples-div {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.home-info-div {
+  background-color: var(--secondary-color);
+}
+
+.approach-div {
+  background-color: var(--multiply-color);
+  background-image: url(../assets/images/staircase.jpg);
+  background-blend-mode: multiply;
+  background-size: cover;
+  /* background-attachment: fixed; */
+  background-position: center;
+  color: white;
+}
+
+
+/********************NAV STYLING********************/
+
 .nav-list {
-  font-family: GesturaThin;
+  font-family: PlayfairLight;
   list-style-type: none;
   display: flex;
   gap: 1em;
-  font-size: 1.1rem;
-  color: white;
+  font-size: 1.2rem;
+  color: var(--primary-color);
 }
 
 .nav-item:hover {
   opacity: 0.8;
 }
 
-.intro-name {
-  font-size: 5rem;
-  font-family: GesturaThin;
-}
 
 .nav-name {
+  font-family: PlayfairLight;
   font-size: 2rem;
-  color: white;
+  color: var(--primary-color);
 }
 
 .mobile-nav {
@@ -131,38 +202,36 @@ textarea {
   display: none;
 }
 
+/*******************************************/
+
+
+.intro-name {
+  font-size: 5rem;
+  font-family: PlayfairLight;
+}
 .intro-info {
   font-size: 1.5rem;
-  font-family: GesturaThin;
+  font-family: PlayfairLight;
 }
 
 .intro-location {
   font-size: 1.1rem;
-  font-family: GesturaThin;
+  font-family: PlayfairLight;
 }
 
 .intro-image {
   width: min(80%, 400px);
 }
 
-.intro-left {
+.intro-content {
   display: flex;
   flex-direction: column;
+  align-self: center;
+  text-align: center;
   gap: 1em;
-  width: 80%;
 }
 
-.intro-right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1em;
-  width: 80%;
-}
-
-.img-res-div {
-  width: 30%;
-}
+/**************QUOTE STYLING**************/
 
 .quote {
   display: flex;
@@ -175,7 +244,7 @@ textarea {
 
 .quote-text {
   font-size: 2.3rem;
-  font-family: GesturaItalic;
+  font-family: PlayfairItalic;
   font-style: italic;
 }
 
@@ -189,56 +258,39 @@ textarea {
   color: var(--highlight-color);
 }
 
-.section-div {
-  padding: 4em 1em;
-  color: var(--primary-color);
-}
+/****************************************/
 
-.section-title {
+.section-title,
+.sub-section-title {
   font-size: 4rem;
-  font-family: GesturaThin;
+  font-family: PlayfairLight;
+  margin-bottom: .7em;
 }
 
 .sub-section-title {
   font-size: 2.8rem;
-  font-family: GesturaThin;
-}
-
-.info-div {
-  margin-top: 2em;
 }
 
 .info,
 .flex-info,
 .home-info {
-  width: 60%;
   font-size: 1.3rem;
   text-align: justify;
   text-justify: inter-word;
-  font-family: GesturaThin;
+  font-family: PlayfairLight;
   line-height: 1.3em;
-}
-
-.info {
-  width: 75%;
 }
 
 .home-info {
   width: 90%;
-  font-size: 1.1rem;
-  color: white;
-  line-height: 1.1rem;
+  font-size: 1.5rem;
+  color: var(--primary-color);
 }
 
 .examples {
   font-size: 1.4rem;
-  font-family: GesturaThin;
+  font-family: PlayfairLight;
   line-height: 2em;
-}
-
-.examples-div {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
 }
 
 .subscript {
@@ -246,16 +298,13 @@ textarea {
   font-size: 1.1rem;
 }
 
+
+/*******************CONTACT PAGE STYLING*******************/
+
 .contact-div {
   gap: 4em;
-}
-
-.contact-title {
-  width: 30%;
-}
-
-.form-div {
-  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
 }
 
 .form-grid {
@@ -301,39 +350,32 @@ textarea {
 
 form input:not([type="submit"]):focus,
 textarea:focus {
-  background-color: rgba(96, 108, 93, 0.3);
-  /* box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2); */
-  /* outline: 2px solid #333; */
+  background-color: rgba(66, 74, 63, 0.3);
   outline: none;
 }
 
 #submit {
   padding: 1em 1.5em;
-  font-family: GesturaThin;
+  font-family: PlayfairLight;
   color: black;
   font-size: 1.1rem;
   border: none;
-  background-color: rgba(96, 108, 93, 0.9);
+  background-color: rgba(66, 74, 63, 0.9);
   color: white;
 }
 
 #submit:hover {
   cursor: pointer;
-  background-color: rgba(96, 108, 93, 0.8);
+  background-color: rgba(66, 74, 63, 0.8);
 }
 
-.underline,
-.active {
-  text-decoration-line: underline;
-  text-decoration-style: solid;
-  text-decoration-color: currentColor;
-  text-decoration-thickness: 0.5px;
-  text-underline-offset: 0.3em;
-  text-decoration-skip: auto;
-  text-decoration-skip-ink: auto;
-}
 
-@media screen and (max-width: 715px) {
+
+
+
+
+
+@media screen and (max-width: 920px) {
   .container {
     width: 90%;
   }
@@ -344,9 +386,6 @@ textarea:focus {
     gap: 2em;
   }
 
-  .intro-right {
-    order: 1;
-  }
 
   .intro-image {
     width: 60%;
@@ -363,19 +402,14 @@ textarea:focus {
     width: 60%;
   }
 
-  .intro-left {
-    width: 100%;
-    order: 2;
-  }
-
   .info,
   .flex-info {
     width: 100%;
     margin-top: 1em;
   }
 
-  .contact-title {
-    width: 100%;
+  .contact-div {
+    grid-template-columns: 1fr;
   }
 
   .desktop-nav {
@@ -390,6 +424,7 @@ textarea:focus {
 
   .mobile-nav li {
     font-size: 1.3rem;
+    color: white;
   }
 
   .nav-list {
@@ -403,7 +438,7 @@ textarea:focus {
   }
 
   .intro-div {
-    padding-top: 0;
+    padding: 8em 0;
   }
 
   .form-div {
