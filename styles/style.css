@@ -18,7 +18,7 @@
   --secondary-color: #fffce2;
   --tertiary-color: #f7e6c4;
   --highlight-color: #f1c376;
-  --multiply-color: rgb(98, 95, 95);
+  --multiply-color: rgb(129, 123, 123);
   --multiply-color-darker: rgb(104, 99, 99);
   box-sizing: border-box;
   color: var(--highlight-color);
@@ -136,7 +136,7 @@ textarea {
   padding: 16em 0;
   background-blend-mode: multiply;
   background-size: cover;
-  /* background-attachment: fixed; */
+  background-attachment: fixed;
   color: white;
 }
 
@@ -150,22 +150,49 @@ textarea {
 }
 
 .approach-div {
-  background-color: var(--multiply-color-darker);
+  background-color: var(--multiply-color);
   background-image: url(../assets/images/staircase.jpg);
   background-blend-mode: multiply;
   background-size: cover;
-  /* background-attachment: fixed; */
+  background-attachment: fixed;
   background-position: center;
   color: white;
 }
 
 .session-div {
-  background-color: var(--multiply-color-darker);
+  background-color: var(--multiply-color);
   background-image: url(../assets/images/leaf-landscape.jpg);
   padding: 10em 0;
   background-blend-mode: multiply;
   background-size: cover;
-  /* background-attachment: fixed; */
+  background-attachment: fixed;
+  color: white;
+}
+
+.profile-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-text-div {
+  padding: 1.5em 1em;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.less-padding-div {
+  padding: 1.5em 1em;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.leaf-bg-div {
+  background-color: var(--multiply-color);
+  background-image: url(../assets/images/leaf-landscape.jpg);
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-attachment: fixed;
   color: white;
 }
 
@@ -279,12 +306,19 @@ textarea {
   font-size: 1.8rem;
 }
 
+.approach {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .info,
 .flex-info,
-.home-info {
+.home-info,
+.left-info {
   font-size: 1.3rem;
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: center;
+  /* text-justify: inter-word; */
   font-family: PlayfairLight;
   line-height: 1.3em;
 }
@@ -293,6 +327,11 @@ textarea {
   width: 90%;
   font-size: 1.5rem;
   color: var(--primary-color);
+  text-align: center;
+}
+
+.left-info {
+  text-align: left;
 }
 
 .examples {
@@ -351,15 +390,18 @@ textarea {
   font-family: GesturaThin;
   color: var(--primary-color);
   font-size: 1.25rem;
+  border: none;
 }
+
 
 form label {
   margin: 0.5em 0;
+  color: white;
 }
 
 form input:not([type="submit"]):focus,
 textarea:focus {
-  background-color: rgba(66, 74, 63, 0.3);
+  background-color: rgba(255, 255, 255, 0.9);
   outline: none;
 }
 
