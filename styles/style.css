@@ -22,6 +22,7 @@
   --multiply-color-darker: rgb(104, 99, 99);
   box-sizing: border-box;
   color: var(--highlight-color);
+  --div-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 *,
@@ -37,6 +38,7 @@ body {
 nav {
   background-color: var(--secondary-color);
   padding: 1.3em 0;
+  box-shadow: var(--div-box-shadow);
 }
 
 li a {
@@ -157,6 +159,15 @@ textarea {
   color: white;
 }
 
+.session-div {
+  background-color: var(--multiply-color-darker);
+  background-image: url(../assets/images/leaf-landscape.jpg);
+  padding: 10em 0;
+  background-blend-mode: multiply;
+  background-size: cover;
+  /* background-attachment: fixed; */
+  color: white;
+}
 
 /********************NAV STYLING********************/
 
@@ -253,7 +264,8 @@ textarea {
 /****************************************/
 
 .section-title,
-.sub-section-title {
+.sub-section-title,
+.mini-section-title {
   font-size: 4rem;
   font-family: PlayfairLight;
   margin-bottom: .7em;
@@ -261,6 +273,10 @@ textarea {
 
 .sub-section-title {
   font-size: 2.8rem;
+}
+
+.mini-section-title {
+  font-size: 1.8rem;
 }
 
 .info,
@@ -416,5 +432,9 @@ textarea:focus {
 
   .intro-div {
     padding: 8em 0;
+  }
+
+  .session-div {
+    background-image: url(../assets/images/leaf-portrait.jpg);
   }
 }
