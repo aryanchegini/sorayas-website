@@ -41,6 +41,10 @@ nav {
   box-shadow: var(--div-box-shadow);
 }
 
+ul {
+  width: 100%;
+}
+
 li a {
   text-decoration: none;
   color: inherit;
@@ -120,7 +124,7 @@ textarea {
 
 .two-col-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(390px, 50%));
+  grid-template-columns: repeat(2, 1fr);
 }
 
 /*********************DIVS*********************/
@@ -136,6 +140,7 @@ textarea {
   padding: 16em 0;
   background-blend-mode: multiply;
   background-size: cover;
+  background-position: center;
   background-attachment: fixed;
   color: white;
 }
@@ -188,8 +193,8 @@ textarea {
 }
 
 .leaf-bg-div {
-  background-color: var(--multiply-color);
-  background-image: url(../assets/images/leaf-landscape.jpg);
+  background-color: var(--multiply-color-darker);
+  background-image: url(../assets/images/wood.jpg);
   background-blend-mode: multiply;
   background-size: cover;
   background-attachment: fixed;
@@ -387,12 +392,16 @@ input:not([type="submit"]),
 textarea {
   display: block;
   width: 100%;
-  font-family: GesturaThin;
+  font-family: PlayfairLight;
   color: var(--primary-color);
   font-size: 1.25rem;
   border: none;
 }
 
+input:not([type="submit"]),
+textarea {
+  background-color: rgba(255, 255, 255, 0.4);
+}
 
 form label {
   margin: 0.5em 0;
@@ -401,7 +410,7 @@ form label {
 
 form input:not([type="submit"]):focus,
 textarea:focus {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.3);
   outline: none;
 }
 
@@ -411,13 +420,13 @@ textarea:focus {
   color: black;
   font-size: 1.1rem;
   border: none;
-  background-color: rgba(66, 74, 63, 0.9);
+  background-color: rgba(255, 252, 226, 0.5);
   color: white;
 }
 
 #submit:hover {
   cursor: pointer;
-  background-color: rgba(66, 74, 63, 0.8);
+  background-color: rgba(255, 252, 226, 0.3);
 }
 
 
@@ -473,10 +482,22 @@ textarea:focus {
   }
 
   .intro-div {
-    padding: 8em 0;
+    padding: 13em 0;
   }
 
   .session-div {
     background-image: url(../assets/images/leaf-portrait.jpg);
+  }
+
+  .two-col-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-div {
+    background-position: right 75% bottom 80%;
+  }
+
+  .left-menu {
+    justify-content: flex-start;
   }
 }
