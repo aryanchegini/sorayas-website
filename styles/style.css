@@ -140,7 +140,7 @@ textarea {
   padding: 16em 0;
   background-blend-mode: multiply;
   background-size: cover;
-  background-position: center;
+  /* background-position: center; */
   background-attachment: fixed;
   color: white;
 }
@@ -160,7 +160,7 @@ textarea {
   background-blend-mode: multiply;
   background-size: cover;
   background-attachment: fixed;
-  background-position: center;
+  /* background-position: center; */
   color: white;
 }
 
