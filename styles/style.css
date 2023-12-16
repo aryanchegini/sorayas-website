@@ -142,9 +142,8 @@ textarea {
   background-image: url(../assets/images/hand-desktop.jpg);
   padding: calc(8em + 10vw) 0;
   background-size: cover;
-  background-position: center;
+  background-position: right 75% bottom 90%;
   color: white;
-  background-attachment: fixed;
   background-repeat: no-repeat;
 }
 
@@ -163,7 +162,6 @@ textarea {
   background-size: cover;
   background-position: center;
   color: white;
-  background-attachment: fixed;
   background-repeat: no-repeat;
   background-blend-mode: multiply;
 }
@@ -174,7 +172,6 @@ textarea {
   padding: 10em 0;
   background-size: cover;
   color: white;
-  background-attachment: fixed;
   background-repeat: no-repeat;
   background-blend-mode: multiply;
 }
@@ -500,7 +497,7 @@ textarea:focus {
   }
 
   .intro-div {
-    background-position: right 75% bottom 80%;
+    background-position: right 75% bottom 300%;
     padding: calc(33vw) 0;
   }
 
@@ -516,6 +513,21 @@ textarea:focus {
     justify-content: flex-end;
   }
 
+}
+
+@media screen and (min-width: 920px) {
+  .intro-div {
+    background-attachment: fixed;
+  }
+
+  .approach-div {
+    background-attachment: fixed;
+  }
+
+  .session-div {
+    background-attachment: fixed;
+  }
+  
 }
 
 @media screen and (max-width: 500px) {
