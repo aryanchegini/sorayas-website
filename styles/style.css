@@ -194,7 +194,7 @@ textarea {
   color: white;
 }
 
-/* .contact-div {
+.contact-div {
   background-color: var(--multiply-color);
   background-image: url(../assets/images/wood.jpg);
   background-size: cover;
@@ -202,7 +202,8 @@ textarea {
   color: white;
   background-repeat: no-repeat;
   background-blend-mode: multiply;
-} */
+  height: 100%;
+}
 
 /********************NAV STYLING********************/
 
@@ -405,7 +406,8 @@ textarea {
   display: block;
   width: 100%;
   font-family: PlayfairLight;
-  color: var(--primary-color);
+  /* color: var(--primary-color); */
+  color: white;
   font-size: 1.25rem;
   border: none;
 }
@@ -417,13 +419,15 @@ form label {
 
 form input:not([type="submit"]),
 textarea {
-  background-color: rgba(66, 74, 63, 0.3);
+  /* background-color: rgba(66, 74, 63, 0.3); */
+  background-color: rgba(255, 255, 255, 0.45);
   outline: none;
 }
 
 form input:not([type="submit"]):focus,
 textarea:focus {
-  background-color: rgba(66, 74, 63, 0.25);
+  /* background-color: rgba(66, 74, 63, 0.25); */
+  background-color: rgba(255, 255, 255, 0.35);
 }
 
 #submit {
@@ -434,6 +438,8 @@ textarea:focus {
   border: none;
   background-color: rgba(66, 74, 63, 0.9);
   color: white;
+  /* background-color: rgba(255, 255, 255, 0.55);
+  color: rgb(66, 74, 63); */
 }
 
 #submit:hover {
