@@ -69,7 +69,10 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1em;
+}
+
+.col > * + * {
+  margin-top: 1em;
 }
 
 .row,
@@ -101,6 +104,7 @@ textarea {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   margin-bottom: 3em;
 }
 
@@ -194,9 +198,12 @@ textarea {
   font-family: PlayfairLight;
   list-style-type: none;
   display: flex;
-  gap: 1em;
   font-size: 1.2rem;
   color: var(--primary-color);
+}
+
+.nav-list > * + * {
+  margin-left: .7em;
 }
 
 .nav-item:hover {
@@ -250,7 +257,10 @@ textarea {
   flex-direction: column;
   align-self: center;
   text-align: center;
-  gap: 1em;
+}
+
+.intro-content > * + * {
+  margin-top: 1em;
 }
 
 /**************QUOTE STYLING**************/
@@ -258,10 +268,13 @@ textarea {
 .quote {
   display: flex;
   flex-direction: column;
-  gap: 1em;
   padding: 2.5em 0;
   color: white;
   max-width: 600px;
+}
+
+.quote > * + * {
+  margin-top: 1em;
 }
 
 .quote-text {
@@ -341,9 +354,9 @@ textarea {
 /*******************CONTACT PAGE STYLING*******************/
 
 .contact-div {
-  gap: 4em;
   display: grid;
   grid-template-columns: 2fr 3fr;
+  grid-gap: 4em;
 }
 
 .form-grid {
@@ -426,7 +439,10 @@ textarea:focus {
   .row {
     flex-direction: column;
     align-items: center;
-    gap: 2em;
+  }
+
+  .row > * + * {
+    margin-top: 4em;
   }
 
   .info,
@@ -478,11 +494,13 @@ textarea:focus {
 
   .intro-div {
     background-position: right 75% bottom 80%;
+    padding: calc(33vw) 0;
   }
 
   .right-menu {
     justify-content: flex-end;
   }
+
 }
 
 @media screen and (min-width: 920px) {
@@ -496,5 +514,6 @@ textarea:focus {
 
   .session-div {
     background-attachment: fixed;
+    background-position: right 75% bottom 80%;
   }
 }
