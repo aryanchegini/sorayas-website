@@ -142,7 +142,7 @@ textarea {
   background-image: url(../assets/images/hand-desktop.jpg);
   padding: calc(8em + 10vw) 0;
   background-size: cover;
-  background-position: right 75% bottom 90%;
+  background-position: right 75% bottom 100%;
   color: white;
   background-repeat: no-repeat;
 }
@@ -481,6 +481,10 @@ textarea:focus {
     height: 99.99px;
   }
 
+  .nav-box-home {
+    height: 79.59px;
+  }
+
   .nav-list {
     flex-direction: column;
     text-align: center;
@@ -494,11 +498,6 @@ textarea:focus {
   .menu-toggle {
     display: block;
     cursor: pointer;
-  }
-
-  .intro-div {
-    background-position: right 75% bottom 300%;
-    padding: calc(33vw) 0;
   }
 
   .session-div {
@@ -528,10 +527,4 @@ textarea:focus {
     background-attachment: fixed;
   }
   
-}
-
-@media screen and (max-width: 500px) {
-  .intro-div {
-    background-size: 175%;
-  }
 }
