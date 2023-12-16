@@ -194,6 +194,16 @@ textarea {
   color: white;
 }
 
+/* .contact-div {
+  background-color: var(--multiply-color);
+  background-image: url(../assets/images/wood.jpg);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+} */
+
 /********************NAV STYLING********************/
 
 .nav-list {
@@ -355,7 +365,7 @@ textarea {
 
 /*******************CONTACT PAGE STYLING*******************/
 
-.contact-div {
+.contact-grid {
   display: grid;
   grid-template-columns: 2fr 3fr;
   grid-gap: 4em;
@@ -458,7 +468,7 @@ textarea:focus {
     margin-top: 1em;
   }
 
-  .contact-div {
+  .contact-grid {
     grid-template-columns: 1fr;
   }
 
