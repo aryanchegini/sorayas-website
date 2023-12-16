@@ -516,9 +516,10 @@ textarea:focus {
     justify-content: flex-end;
   }
 
-  @media screen and (max-width: 500px) {
-    .intro-div {
-      background-size: 175%;
-    }
+}
+
+@media screen and (max-width: 500px) {
+  .intro-div {
+    background-size: 175%;
   }
 }
