@@ -475,6 +475,11 @@ textarea:focus {
     text-align: center;
   }
 
+  .nav-list > * + * {
+    margin-left: 0;
+    margin-top: .7em;
+  }
+
   .menu-toggle {
     display: block;
     cursor: pointer;
