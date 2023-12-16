@@ -18,6 +18,7 @@
   --secondary-color: #fffce2;
   --tertiary-color: #f7e6c4;
   --highlight-color: #f1c376;
+  --multiply-color: rgb(98, 95, 95);
   box-sizing: border-box;
   color: var(--highlight-color);
   --nav-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -31,6 +32,7 @@
 
 body {
   padding: 0;
+  margin: 0;
 }
 
 nav {
@@ -137,11 +139,13 @@ textarea {
 }
 
 .intro-div {
-  background-image: url(../assets/images/hand-fotor-2023121413434.jpg);
-  padding: 16em 0;
+  background-image: url(../assets/images/hand-desktop.jpg);
+  padding: calc(8em + 10vw) 0;
   background-size: cover;
   background-position: center;
   color: white;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .examples-div {
@@ -154,17 +158,25 @@ textarea {
 }
 
 .approach-div {
-  background-image: url(../assets/images/staircase-fotor-2023121413455.jpg);
+  background-color: var(--multiply-color);
+  background-image: url(../assets/images/staircase.jpg);
   background-size: cover;
   background-position: center;
   color: white;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
 }
 
 .session-div {
-  background-image: url(../assets/images/leaf-landscape-fotor-2023121413339.jpg);
+  background-color: var(--multiply-color);
+  background-image: url(../assets/images/leaf-landscape.jpg);
   padding: 10em 0;
   background-size: cover;
   color: white;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
 }
 
 .profile-div {
@@ -182,13 +194,6 @@ textarea {
 .less-padding-div {
   padding: 1.5em 1em;
   background-color: var(--primary-color);
-  color: white;
-}
-
-.leaf-bg-div {
-  background-image: url();
-  background-size: cover;
-  /* background-attachment: fixed; */
   color: white;
 }
 
@@ -429,9 +434,14 @@ textarea:focus {
   background-color: rgba(66, 74, 63, 0.8);
 }
 
-
-
 @media screen and (max-width: 920px) {
+  nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
   .container {
     width: 85%;
   }
@@ -470,6 +480,10 @@ textarea:focus {
     color: white;
   }
 
+  .nav-box {
+    height: 99.99px;
+  }
+
   .nav-list {
     flex-direction: column;
     text-align: center;
@@ -486,39 +500,25 @@ textarea:focus {
   }
 
   .intro-div {
-    padding: 13em 0;
+    background-position: right 75% bottom 80%;
+    padding: calc(33vw) 0;
   }
 
   .session-div {
-    background-image: url(../assets/images/leaf-portrait-fotor-202312141346.jpg);
+    background-image: url(../assets/images/leaf-portrait.jpg);
   }
 
   .two-col-grid {
     grid-template-columns: 1fr;
   }
 
-  .intro-div {
-    background-position: right 75% bottom 80%;
-    padding: calc(33vw) 0;
-  }
-
   .right-menu {
     justify-content: flex-end;
   }
 
-}
-
-@media screen and (min-width: 920px) {
-  .intro-div {
-    background-attachment: fixed;
-  }
-
-  .approach-div {
-    background-attachment: fixed;
-  }
-
-  .session-div {
-    background-attachment: fixed;
-    background-position: right 75% bottom 80%;
+  @media screen and (max-width: 500px) {
+    .intro-div {
+      background-size: 175%;
+    }
   }
 }
