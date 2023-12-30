@@ -190,19 +190,20 @@ textarea {
 
 .less-padding-div {
   padding: 1.5em 1em;
-  background-color: var(--primary-color);
-  color: white;
+  color: var(--primary-color);
+  /* color: white; */
 }
 
 .contact-div {
-  background-color: var(--multiply-color);
+  /* background-color: var(--multiply-color);
   background-image: url(../assets/images/wood.jpg);
   background-size: cover;
   background-position: center;
-  color: white;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
+  /* color: white; */
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
   background-blend-mode: multiply;
-  height: 100%;
 }
 
 /********************NAV STYLING********************/
@@ -406,8 +407,6 @@ textarea {
   display: block;
   width: 100%;
   font-family: PlayfairLight;
-  /* color: var(--primary-color); */
-  color: white;
   font-size: 1.25rem;
   border: none;
 }
@@ -419,16 +418,16 @@ form label {
 
 form input:not([type="submit"]),
 textarea {
-  /* background-color: rgba(66, 74, 63, 0.3); */
-  background-color: rgba(255, 255, 255, 0.45);
+  background-color: rgba(255, 252, 226, 0.5);
   outline: none;
 }
 
 form input:not([type="submit"]):focus,
 textarea:focus {
-  /* background-color: rgba(66, 74, 63, 0.25); */
-  background-color: rgba(255, 255, 255, 0.35);
+  background-color: rgba(255, 252, 226, 0.4);
 }
+
+/* rgba(255, 252, 226, 1) */
 
 #submit {
   padding: 1em 1.5em;
@@ -436,10 +435,8 @@ textarea:focus {
   color: black;
   font-size: 1.1rem;
   border: none;
-  background-color: rgba(66, 74, 63, 0.9);
-  color: white;
-  /* background-color: rgba(255, 255, 255, 0.55);
-  color: rgb(66, 74, 63); */
+  background-color: rgba(255, 252, 226, .9);
+  color: var(--primary-color);
 }
 
 #submit:hover {

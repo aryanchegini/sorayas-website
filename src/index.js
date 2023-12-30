@@ -12,3 +12,13 @@ function hideNavbar() {
   mobileNav.classList.remove("mobile-nav-active");
   window.removeEventListener("click", hideNavbar);
 }
+
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (event) {
+    event.preventDefault();
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+});
