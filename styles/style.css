@@ -153,7 +153,8 @@ textarea {
 }
 
 .home-info-div {
-  background-color: var(--secondary-color);
+  /* background-color: var(--secondary-color); */
+  color: var(--primary-color);
 }
 
 .approach-div {
@@ -220,6 +221,10 @@ textarea {
   margin-left: .7em;
 }
 
+.nav-item {
+  user-select: none;
+}
+
 .nav-item:hover {
   opacity: 0.8;
 }
@@ -243,6 +248,7 @@ textarea {
 
 .menu-toggle {
   display: none;
+  user-select: none;
 }
 
 /*******************************************/
