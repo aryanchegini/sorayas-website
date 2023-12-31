@@ -39,6 +39,8 @@ nav {
   background-color: var(--secondary-color);
   padding: 1.3em 0;
   box-shadow: var(--nav-box-shadow);
+  position: sticky;
+  top: 0;
 }
 
 ul {
@@ -451,13 +453,6 @@ textarea:focus {
 }
 
 @media screen and (max-width: 920px) {
-  nav {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-  }
-
   .container {
     width: 85%;
   }
@@ -494,14 +489,6 @@ textarea:focus {
   .mobile-nav li {
     font-size: 1.3rem;
     color: white;
-  }
-
-  .nav-box {
-    height: 99.99px;
-  }
-
-  .nav-box-home {
-    height: 79.59px;
   }
 
   .nav-list {

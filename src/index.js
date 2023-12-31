@@ -6,14 +6,15 @@ function hideNavbar() {
   window.removeEventListener("click", hideNavbar);
 }
 
-function isNotInViewport(element) {
+function isPartiallyInViewport(element) {
   const rect = element.getBoundingClientRect();
-  return !(
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
+  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+  const windowWidth = window.innerWidth || document.documentElement.clientWidth;
+
+  const topVisible = rect.top <= windowHeight && rect.bottom >= 0;
+  const leftVisible = rect.left <= windowWidth && rect.right >= 0;
+
+  return topVisible && leftVisible;
 }
 
 menuToggle.addEventListener("click", (event) => {
@@ -48,13 +49,13 @@ const homeDiv = document.getElementById("home");
 
 let nameInNav = false;
 window.addEventListener("scroll", (event) => {
-  if (isNotInViewport(homeDiv) && !nameInNav) {
+  if (!isPartiallyInViewport(homeDiv) && !nameInNav) {
     innerNav.classList.remove("centered-div", "right-menu");
     innerNav.classList.add("row-aligned");
     innerNav.prepend(nameDiv);
     nameInNav = true;
   }
-  if (!isNotInViewport(homeDiv) && nameInNav) {
+  if (isPartiallyInViewport(homeDiv) && nameInNav) {
     innerNav.classList.remove("row-aligned");
     innerNav.classList.add("centered-div", "right-menu");
     nameDiv.remove();
