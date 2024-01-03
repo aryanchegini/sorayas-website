@@ -142,9 +142,9 @@ textarea {
 
 .intro-div {
   background-image: url(../assets/images/hand-desktop.jpg);
-  padding: calc(8em + 10vw) 0;
+  padding: calc(5em + 10vw) 0;
   background-size: cover;
-  background-position: right 75% bottom 100%;
+  background-position: right 75% bottom 80%;
   color: white;
   background-repeat: no-repeat;
 }
