@@ -62,3 +62,23 @@ window.addEventListener("scroll", (event) => {
     nameInNav = false;
   }
 });
+
+const nav = document.querySelector('nav');
+
+window.onresize = () => {
+  let homeHeight = homeDiv.getBoundingClientRect().height;
+  let navHeight = nav.getBoundingClientRect().height;
+  if (homeHeight + navHeight < window.innerHeight) {
+    let diff = window.innerHeight - (homeHeight + navHeight)
+    homeDiv.style.height = homeHeight + diff + 'px';
+  }
+};
+
+document.addEventListener('DOMContentLoaded', function(event) {
+  let homeHeight = homeDiv.getBoundingClientRect().height;
+  let navHeight = nav.getBoundingClientRect().height;
+  if (homeHeight + navHeight < window.innerHeight) {
+    let diff = window.innerHeight - (homeHeight + navHeight)
+    homeDiv.style.height = homeHeight + diff + 'px';
+  }
+});
