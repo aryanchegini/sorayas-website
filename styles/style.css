@@ -375,6 +375,9 @@ textarea {
   font-size: 1.1rem;
 }
 
+.list-item {
+  font-weight: bold;
+}
 
 /*******************CONTACT PAGE STYLING*******************/
 
@@ -519,6 +522,10 @@ textarea:focus {
 
   .right-menu {
     justify-content: flex-end;
+  }
+
+  .img-res {
+    width: 95%;
   }
 
 }
