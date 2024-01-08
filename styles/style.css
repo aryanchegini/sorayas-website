@@ -375,10 +375,6 @@ textarea {
   font-size: 1.1rem;
 }
 
-.list-item {
-  font-weight: bold;
-}
-
 /*******************CONTACT PAGE STYLING*******************/
 
 .contact-grid {
@@ -514,6 +510,10 @@ textarea:focus {
 
   .session-div {
     background-image: url(../assets/images/leaf-portrait.jpg);
+  }
+
+  .intro-div {
+    background-position: right 45% bottom 80%;
   }
 
   .two-col-grid {
