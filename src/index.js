@@ -65,6 +65,8 @@ window.addEventListener("scroll", (event) => {
 
 const nav = document.querySelector('nav');
 
+
+// when you resize the window
 window.onresize = () => {
   let homeHeight = homeDiv.getBoundingClientRect().height;
   let navHeight = nav.getBoundingClientRect().height;
@@ -74,11 +76,19 @@ window.onresize = () => {
   }
 };
 
+
+// when crucial content is loaded, excluding images
 document.addEventListener('DOMContentLoaded', function(event) {
   let homeHeight = homeDiv.getBoundingClientRect().height;
   let navHeight = nav.getBoundingClientRect().height;
-  if (homeHeight + navHeight < window.innerHeight) {
-    let diff = window.innerHeight - (homeHeight + navHeight)
-    homeDiv.style.height = homeHeight + diff + 'px';
+  if (window.innerWidth <= 440) {
+    let newHomeHeight = (13*window.innerWidth)/11;
+    homeDiv.style.height = newHomeHeight + 'px';
+  } else {
+    if (homeHeight + navHeight < window.innerHeight) {
+      let diff = window.innerHeight - (homeHeight + navHeight)
+      homeDiv.style.height = homeHeight + diff + 'px';
+    }
   }
+
 });
