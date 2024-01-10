@@ -65,54 +65,61 @@ window.addEventListener("scroll", (event) => {
 });
 
 // adjusting hand div height to fit viewport
-window.onresize = () => {
-  let handHeight = handDiv.getBoundingClientRect().height;
-  let navHeight = document.querySelector("nav").getBoundingClientRect().height;
-  if (handHeight + navHeight < window.innerHeight) {
-    let diff = window.innerHeight - (handHeight + navHeight);
-    handDiv.style.height = handHeight + diff + "px";
-  }
-};
+// window.onresize = () => {
+//   let handHeight = handDiv.getBoundingClientRect().height;
+//   let navHeight = document.querySelector("nav").getBoundingClientRect().height;
+//   if (handHeight + navHeight < window.innerHeight) {
+//     let diff = window.innerHeight - (handHeight + navHeight);
+//     handDiv.style.height = handHeight + diff + "px";
+//   }
+// };
 
-document.addEventListener("DOMContentLoaded", function (event) {
-  let handHeight = handDiv.getBoundingClientRect().height;
-  let navHeight = document.querySelector("nav").getBoundingClientRect().height;
-  if (handHeight + navHeight < window.innerHeight) {
-    let diff = window.innerHeight - (handHeight + navHeight);
-    handDiv.style.height = handHeight + diff + "px";
-  }
-});
 
-let divLocations;
-
-// wait for handDiv to be adjusted
-setTimeout(() => {
-  divLocations = {
-    home: 0,
-    approach: document.getElementById("home").getBoundingClientRect().height,
-    about:
-      document.getElementById("home").getBoundingClientRect().height +
-      document.getElementById("approach").getBoundingClientRect().height,
-    fees:
-      document.getElementById("home").getBoundingClientRect().height +
-      document.getElementById("approach").getBoundingClientRect().height +
-      document.getElementById("about").getBoundingClientRect().height,
-    contact:
-      document.getElementById("home").getBoundingClientRect().height +
-      document.getElementById("approach").getBoundingClientRect().height +
-      document.getElementById("about").getBoundingClientRect().height +
-      document.getElementById("fees").getBoundingClientRect().height,
-  };
-}, 250);
-
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (event) {
-    event.preventDefault();
-    divName = this.getAttribute("href").substring(1);
-    window.scroll({
-      top: divLocations[divName],
-      left: 0,
-      behavior: "smooth",
-    });
+function calculateDivLocations() {
+  return new Promise((resolve, reject) => {
+    let handHeight = handDiv.getBoundingClientRect().height;
+    let navHeight = document.querySelector("nav").getBoundingClientRect().height;
+    if (handHeight + navHeight < window.innerHeight) {
+      let diff = window.innerHeight - (handHeight + navHeight);
+      handDiv.style.height = handHeight + diff + "px";
+      resolve({
+        home: 0,
+        approach: document.getElementById("home").getBoundingClientRect().height,
+        about:
+          document.getElementById("home").getBoundingClientRect().height +
+          document.getElementById("approach").getBoundingClientRect().height,
+        fees:
+          document.getElementById("home").getBoundingClientRect().height +
+          document.getElementById("approach").getBoundingClientRect().height +
+          document.getElementById("about").getBoundingClientRect().height,
+        contact:
+          document.getElementById("home").getBoundingClientRect().height +
+          document.getElementById("approach").getBoundingClientRect().height +
+          document.getElementById("about").getBoundingClientRect().height +
+          document.getElementById("fees").getBoundingClientRect().height,
+      });
+    } else {
+      reject("Heights are already adjusted.");
+    }
   });
+}
+
+document.addEventListener("DOMContentLoaded", async function (event) {
+  try {
+    const divLocations = await calculateDivLocations();
+    // Now that divLocations are calculated, use them for scrolling
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (event) {
+        event.preventDefault();
+        divName = this.getAttribute("href").substring(1);
+        window.scroll({
+          top: divLocations[divName],
+          left: 0,
+          behavior: "smooth",
+        });
+      });
+    });
+  } catch (error) {
+    console.error(error);
+  }
 });
