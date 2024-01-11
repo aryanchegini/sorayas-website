@@ -82,29 +82,27 @@ function calculateDivLocations() {
     if (handHeight + navHeight < window.innerHeight) {
       let diff = window.innerHeight - (handHeight + navHeight);
       handDiv.style.height = handHeight + diff + "px";
-      resolve({
-        home: 0,
-        approach: document.getElementById("home").getBoundingClientRect().height,
-        about:
-          document.getElementById("home").getBoundingClientRect().height +
-          document.getElementById("approach").getBoundingClientRect().height,
-        fees:
-          document.getElementById("home").getBoundingClientRect().height +
-          document.getElementById("approach").getBoundingClientRect().height +
-          document.getElementById("about").getBoundingClientRect().height,
-        contact:
-          document.getElementById("home").getBoundingClientRect().height +
-          document.getElementById("approach").getBoundingClientRect().height +
-          document.getElementById("about").getBoundingClientRect().height +
-          document.getElementById("fees").getBoundingClientRect().height,
-      });
-    } else {
-      reject("Heights are already adjusted.");
     }
+    resolve({
+      home: 0,
+      approach: document.getElementById("home").getBoundingClientRect().height,
+      about:
+        document.getElementById("home").getBoundingClientRect().height +
+        document.getElementById("approach").getBoundingClientRect().height,
+      fees:
+        document.getElementById("home").getBoundingClientRect().height +
+        document.getElementById("approach").getBoundingClientRect().height +
+        document.getElementById("about").getBoundingClientRect().height,
+      contact:
+        document.getElementById("home").getBoundingClientRect().height +
+        document.getElementById("approach").getBoundingClientRect().height +
+        document.getElementById("about").getBoundingClientRect().height +
+        document.getElementById("fees").getBoundingClientRect().height,
+    });
   });
 }
 
-document.addEventListener("DOMContentLoaded", async function (event) {
+window.addEventListener("load", async function (event) {
   try {
     const divLocations = await calculateDivLocations();
     // Now that divLocations are calculated, use them for scrolling
