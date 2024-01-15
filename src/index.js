@@ -64,17 +64,6 @@ window.addEventListener("scroll", (event) => {
   }
 });
 
-// adjusting hand div height to fit viewport
-// window.onresize = () => {
-//   let handHeight = handDiv.getBoundingClientRect().height;
-//   let navHeight = document.querySelector("nav").getBoundingClientRect().height;
-//   if (handHeight + navHeight < window.innerHeight) {
-//     let diff = window.innerHeight - (handHeight + navHeight);
-//     handDiv.style.height = handHeight + diff + "px";
-//   }
-// };
-
-
 function calculateDivLocations() {
   return new Promise((resolve, reject) => {
     let handHeight = handDiv.getBoundingClientRect().height;
@@ -102,6 +91,26 @@ function calculateDivLocations() {
   });
 }
 
+window.addEventListener("DOMContentLoaded", async function (event) {
+  try {
+    const divLocations = await calculateDivLocations();
+    // Now that divLocations are calculated, use them for scrolling
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (event) {
+        event.preventDefault();
+        divName = this.getAttribute("href").substring(1);
+        window.scroll({
+          top: divLocations[divName],
+          left: 0,
+          behavior: "smooth",
+        });
+      });
+    });
+  } catch (error) {
+    console.error(error);
+  }
+});
+
 window.addEventListener("load", async function (event) {
   try {
     const divLocations = await calculateDivLocations();
@@ -121,3 +130,22 @@ window.addEventListener("load", async function (event) {
     console.error(error);
   }
 });
+
+window.addEventListener('resize', async function (event) {
+  try {
+    const divLocations = await calculateDivLocations();
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (event) {
+        event.preventDefault();
+        divName = this.getAttribute("href").substring(1);
+        window.scroll({
+          top: divLocations[divName],
+          left: 0,
+          behavior: "smooth",
+        });
+      });
+    });
+  } catch (e) {
+    console.error(e)
+  }
+})
