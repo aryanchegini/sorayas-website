@@ -6,7 +6,7 @@ function hideNavbar() {
   window.removeEventListener("click", hideNavbar);
 }
 
-menuToggle.addEventListener("click", (event) => {
+menuToggle.addEventListener("click", () => {
   mobileNav.classList.add("mobile-nav-active");
   setTimeout(() => {
     window.addEventListener("click", hideNavbar);
@@ -49,7 +49,7 @@ const innerNav = document.getElementById("inner-nav");
 const handDiv = document.getElementById("inner-home");
 
 let nameInNav = false;
-window.addEventListener("scroll", (event) => {
+window.addEventListener("scroll", () => {
   if (!isPartiallyInViewport(handDiv) && !nameInNav) {
     innerNav.classList.remove("centered-div", "right-menu");
     innerNav.classList.add("row-aligned");
@@ -65,7 +65,7 @@ window.addEventListener("scroll", (event) => {
 });
 
 function calculateDivLocations() {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     let handHeight = handDiv.getBoundingClientRect().height;
     let navHeight = document.querySelector("nav").getBoundingClientRect().height;
     if (handHeight + navHeight < window.innerHeight) {
@@ -91,14 +91,14 @@ function calculateDivLocations() {
   });
 }
 
-window.addEventListener("DOMContentLoaded", async function (event) {
+async function setScrolls() {
   try {
     const divLocations = await calculateDivLocations();
     // Now that divLocations are calculated, use them for scrolling
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener("click", function (event) {
         event.preventDefault();
-        divName = this.getAttribute("href").substring(1);
+        let divName = this.getAttribute("href").substring(1);
         window.scroll({
           top: divLocations[divName],
           left: 0,
@@ -109,43 +109,10 @@ window.addEventListener("DOMContentLoaded", async function (event) {
   } catch (error) {
     console.error(error);
   }
-});
+}
 
-window.addEventListener("load", async function (event) {
-  try {
-    const divLocations = await calculateDivLocations();
-    // Now that divLocations are calculated, use them for scrolling
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (event) {
-        event.preventDefault();
-        divName = this.getAttribute("href").substring(1);
-        window.scroll({
-          top: divLocations[divName],
-          left: 0,
-          behavior: "smooth",
-        });
-      });
-    });
-  } catch (error) {
-    console.error(error);
-  }
-});
+window.addEventListener("DOMContentLoaded", setScrolls);
 
-window.addEventListener('resize', async function (event) {
-  try {
-    const divLocations = await calculateDivLocations();
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (event) {
-        event.preventDefault();
-        divName = this.getAttribute("href").substring(1);
-        window.scroll({
-          top: divLocations[divName],
-          left: 0,
-          behavior: "smooth",
-        });
-      });
-    });
-  } catch (e) {
-    console.error(e)
-  }
-})
+window.addEventListener("load", setScrolls);
+
+window.addEventListener('resize', setScrolls);
