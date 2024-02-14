@@ -66,12 +66,21 @@ window.addEventListener("scroll", () => {
 
 function calculateDivLocations() {
   return new Promise((resolve) => {
+    // adjust hand page height
     let handHeight = handDiv.getBoundingClientRect().height;
     let navHeight = document.querySelector("nav").getBoundingClientRect().height;
     if (handHeight + navHeight < window.innerHeight) {
       let diff = window.innerHeight - (handHeight + navHeight);
       handDiv.style.height = handHeight + diff + "px";
     }
+
+    let feesHeight = document.querySelector(".session-div").getBoundingClientRect().height;
+    if (feesHeight + 100 != window.innerHeight && (window.innerHeight - 100) > 500) {
+      let diff = window.innerHeight - (feesHeight + 100);
+      document.querySelector(".session-div").style.height = feesHeight + diff + "px";
+    }
+
+
     resolve({
       home: 0,
       approach: document.getElementById("home").getBoundingClientRect().height,
