@@ -18,7 +18,7 @@
   --secondary-color: #fffce2;
   --tertiary-color: #f7e6c4;
   --highlight-color: #f1c376;
-  --multiply-color: rgb(98, 95, 95);
+  --multiply-color: rgb(141, 136, 136);
   --hand-multiply-color: rgb(110, 107, 107);
   box-sizing: border-box;
   color: var(--highlight-color);
@@ -106,15 +106,25 @@ textarea {
 }
 
 .img-res-footer {
-  width: 40%;
+  width: 35%;
+}
+
+.img-link {
+  display: flex;
+  width: 35%;
+}
+
+.img-in-link {
+  width: 100%;
 }
 
 .img-res-div {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 3em;
+  gap: 2em;
 }
 
 .underline,
