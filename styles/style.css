@@ -38,7 +38,7 @@ body {
 
 nav {
   background-color: var(--secondary-color);
-  padding: 1.3em 0;
+  padding: 1.8em 0;
   box-shadow: var(--nav-box-shadow);
   position: sticky;
   top: 0;
@@ -57,6 +57,14 @@ input,
 textarea {
   border-radius: 0;
   border: 1px solid var(--primary-color);
+}
+
+.test-container {
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  max-width: 1000px;
+  background-image: rgba(255, 252, 226, 0.5);
 }
 
 .container,
@@ -82,8 +90,7 @@ textarea {
 
 .row,
 .row-aligned,
-.centered-div
-{
+.centered-div {
   display: flex;
   justify-content: space-between;
 }
@@ -102,29 +109,33 @@ textarea {
 }
 
 .img-res {
-  width: 70%;
-}
-
-.img-res-footer {
-  width: 35%;
-}
-
-.img-link {
-  display: flex;
-  width: 35%;
-}
-
-.img-in-link {
-  width: 100%;
-}
-
-.img-res-div {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 3em;
   gap: 2em;
+}
+
+.img-res-footer {
+  width: 35%;
+}
+
+.img-in-link {
+  height: 100%;
+  width: 100%;
+}
+
+.img-res-div {
+  width: 100%;
+  margin: 0 auto;
+  gap: 5em;
+}
+
+.cert-col {
+  width: 40%;
+  margin: 0 auto;
+  gap: 1.2em;
 }
 
 .underline,
@@ -234,7 +245,7 @@ textarea {
 }
 
 .nav-list > * + * {
-  margin-left: .7em;
+  margin-left: 0.7em;
 }
 
 .nav-item {
@@ -244,7 +255,6 @@ textarea {
 .nav-item:hover {
   opacity: 0.8;
 }
-
 
 .nav-name {
   font-family: PlayfairLight;
@@ -269,7 +279,6 @@ textarea {
 
 /*******************************************/
 
-
 .intro-name {
   font-size: 5rem;
   font-family: PlayfairLight;
@@ -277,6 +286,7 @@ textarea {
 .intro-info {
   font-size: 1.5rem;
   font-family: PlayfairLight;
+  line-height: 1.3;
 }
 
 .intro-location {
@@ -336,7 +346,7 @@ textarea {
 .mini-section-title {
   font-size: 4rem;
   font-family: PlayfairLight;
-  margin-bottom: .7em;
+  margin-bottom: 0.7em;
 }
 
 .sub-section-title {
@@ -421,7 +431,6 @@ textarea {
   grid-area: 4 / 1 / 5 / 3;
 }
 
-
 form label,
 input:not([type="submit"]),
 textarea {
@@ -431,7 +440,6 @@ textarea {
   font-size: 1.25rem;
   border: none;
 }
-
 
 form label {
   margin: 0.5em 0;
@@ -456,7 +464,7 @@ textarea:focus {
   color: black;
   font-size: 1.1rem;
   border: none;
-  background-color: rgba(255, 252, 226, .9);
+  background-color: rgba(255, 252, 226, 0.9);
   color: var(--primary-color);
 }
 
@@ -511,7 +519,7 @@ textarea:focus {
 
   .nav-list > * + * {
     margin-left: 0;
-    margin-top: .7em;
+    margin-top: 0.7em;
   }
 
   .menu-toggle {
@@ -542,7 +550,6 @@ textarea:focus {
   .img-res-footer {
     width: 70%;
   }
-
 }
 
 @media screen and (min-width: 920px) {
@@ -557,5 +564,4 @@ textarea:focus {
   .session-div {
     background-attachment: fixed;
   }
-  
 }
