@@ -18,8 +18,8 @@
   --secondary-color: #fffce2;
   --tertiary-color: #f7e6c4;
   --highlight-color: #f1c376;
-  --multiply-color: rgb(141, 136, 136);
-  --hand-multiply-color: rgb(110, 107, 107);
+  --multiply-color: rgb(129, 129, 129);
+  --hand-multiply-color: rgb(123, 123, 123);
   box-sizing: border-box;
   color: var(--highlight-color);
   --nav-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -167,7 +167,7 @@ textarea {
 }
 
 .intro-div {
-  background-color: var(--multiply-color);
+  background-color: var(--hand-multiply-color);
   background-image: url(../assets/images/hand-desktop.jpg);
   padding: calc(5em + 10vw) 0;
   background-size: cover;
@@ -187,7 +187,7 @@ textarea {
 }
 
 .approach-div {
-  background-color: var(--multiply-color);
+  background-color: var(--hand-multiply-color);
   background-image: url(../assets/images/staircase.jpg);
   background-size: cover;
   background-position: center;
