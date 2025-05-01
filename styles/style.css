@@ -284,7 +284,6 @@ textarea {
   font-family: PlayfairLight;
 }
 .intro-info {
-  font-size: 1.5rem;
   font-family: PlayfairLight;
   line-height: 1.3;
 }
@@ -367,7 +366,7 @@ textarea {
 .flex-info,
 .home-info,
 .left-info {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   text-align: center;
   /* text-justify: inter-word; */
   font-family: PlayfairLight;
@@ -376,7 +375,6 @@ textarea {
 
 .home-info {
   width: 90%;
-  font-size: 1.5rem;
   color: var(--primary-color);
   text-align: center;
 }
@@ -386,7 +384,7 @@ textarea {
 }
 
 .examples {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-family: PlayfairLight;
   line-height: 2em;
 }

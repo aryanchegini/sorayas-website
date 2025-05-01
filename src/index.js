@@ -41,7 +41,7 @@ let nameDiv = elt(
   "h3",
   ["nav-name"],
   [
-    elt("p", [], ["Soraya Adams"]),
+    elt("p", [], ["Soraya Chegini-Adams"]),
     elt("div", ["subscript"], ["Psychotherapist"]),
   ]
 );
